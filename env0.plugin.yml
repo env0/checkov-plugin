@@ -2,18 +2,14 @@ name: Checkov
 icon: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPsdhUMbF4FBmeun5DtMEN4C-eLcLjteM7ssAA1PBE&s
 inputs:
   directory:
-    type: string
+    description: The IaC directory you want to scan with Checkov.
     required: true
   flags:
+    description: Additional Checkov flags
     type: string
 run:
-  runtime: bash
   exec: |
-    sudo apt update
-    sudo apt install software-properties-common
-    sudo add-apt-repository ppa:deadsnakes/ppa
-    sudo apt install python3.7
-    sudo apt install python3-pip
     sudo python3.7 -m pip install -U checkov
+    checkov -v
 
     checkov --directory ${inputs.directory} ${inputs.flags}
