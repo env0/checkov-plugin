@@ -35,7 +35,7 @@ deploy:
       before:
         - name: My Step Name # The name that will be presented in the UI for this step
           use: https://github.com/env0/checkov-plugin # Also supports tags. For example: https://github.com/env0/checkov-plugin@1.0.0
-          input:
+          inputs:
             directory: .
             flags: --framework terraform 
 
