@@ -9,5 +9,4 @@ inputs:
 run:
   exec: |
     sudo pip install -U checkov
-    checkov -v
     checkov --directory ${inputs.directory} ${inputs.flags}
