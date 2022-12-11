@@ -6,7 +6,6 @@ inputs:
     required: true
   flags:
     description: Additional Checkov flags
-    type: string
 run:
   exec: |
     sudo python3.7 -m pip install -U checkov
