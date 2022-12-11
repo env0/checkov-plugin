@@ -8,6 +8,7 @@ inputs:
     description: Additional Checkov flags
 run:
   exec: |
+    which python
     python3.7 -m pip install -U checkov
     checkov -v
     checkov --directory ${inputs.directory} ${inputs.flags}
