@@ -16,7 +16,7 @@ We are using Checkov version `2.2.105`
 
 The Checkov plugin accepts the following inputs:
 
-* path (required) - the path to the directory with the IaC code to scan (the root folder is your project's root folder)
+* directory (required) - the path to the directory with the IaC code to scan (the root folder is your project's root folder)
 
 * flags - a string containing additional flags as one string
 
