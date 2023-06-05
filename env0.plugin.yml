@@ -6,15 +6,7 @@ inputs:
     required: true
   flags:
     description: Additional Checkov flags
-  checkov_version:
-    description: The version of Checkov to install.
-    required: false
-    default: "latest"
 run:
   exec: |
-    if [[ "${inputs.checkov_version}" == "latest" ]]; then
-      sudo pip install -U checkov
-    else
-      sudo pip install checkov==${inputs.checkov_version}
-    fi
+    sudo pip install -U checkov
     checkov --directory ${inputs.directory} ${inputs.flags}
