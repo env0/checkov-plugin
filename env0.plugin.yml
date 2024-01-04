@@ -6,7 +6,9 @@ inputs:
     required: true
   flags:
     description: Additional Checkov flags
+  plugin_revision:
+    description: Which revision to use
 run:
   exec: |
     sudo pip install -U checkov
-    checkov --directory ${inputs.directory} ${inputs.flags}
+    checkov --directory ${inputs.directory} ${inputs.flags} ${inputs.plugin_revision:-main}
